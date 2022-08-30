@@ -6,13 +6,13 @@ const hitAPI = async (city) => {
     );
     const data = await response.json();
 
-    return getInformation(data);
+    return loadInformation(data);
   } catch (error) {
     console.log('ERROR: ' + error);
   }
 };
 
-const getInformation = (data) => {
+const loadInformation = (data) => {
   const information = {
     name: data.name,
     temperature: data.main.temp,

@@ -4,7 +4,7 @@ const weather = document.querySelector('.weather');
 const humidity = document.querySelector('.humidity');
 const wind = document.querySelector('.wind');
 
-const drawInfo = (data) => {
+const drawInfoC = (data) => {
   //receives a promise
   data.then((information) => {
     name.textContent = information.name;
@@ -15,4 +15,17 @@ const drawInfo = (data) => {
   });
 };
 
-export { drawInfo };
+const drawInfoF = (data) => {
+  //receives a promise
+  data.then((information) => {
+    name.textContent = information.name;
+    temperature.textContent = `Temperature: ${Math.round(
+      information.temperature * 1.8 + 32
+    )} °F`;
+    weather.textContent = information.weather;
+    humidity.textContent = `Humidity: ${information.humidity}%`;
+    wind.textContent = `Wind: ${Math.round(information.wind * 2.236936)} m/s`;
+  });
+};
+
+export { drawInfoC, drawInfoF };
