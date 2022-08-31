@@ -3,6 +3,7 @@ import { drawInfoC } from './modules/front';
 import './styles.css';
 
 const input = document.querySelector('.search');
+const titleIcon = document.querySelector('.titleIcon');
 
 input.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
@@ -14,7 +15,8 @@ input.addEventListener('keypress', (e) => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const infor = hitAPI('buenos aires');
   drawInfoC(infor);
+  titleIcon.src = '../src/img/icon.png';
 });

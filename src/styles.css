@@ -16,7 +16,7 @@ body {
 }
 
 #widget {
-  background-color: #000000d0;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   min-width: 30em;
   min-height: 30em;
@@ -29,9 +29,13 @@ body {
   padding: 2em;
 }
 
-.title {
-  display: grid;
-  text-align: center;
+.imgAndLogo {
+  display: flex;
+  gap: 1em;
+}
+
+.titleIcon {
+  width: 3.75em;
 }
 
 .search {
@@ -56,4 +60,8 @@ body {
   display: flex;
   text-align: center;
   align-items: center;
+}
+
+.secondaryInfo {
+  margin: 1.5em;
 }
