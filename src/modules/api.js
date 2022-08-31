@@ -15,11 +15,13 @@ const hitAPI = async (city) => {
 const loadInformation = (data) => {
   const information = {
     name: data.name,
+    country: data.sys.country,
     temperature: data.main.temp,
     feelsLike: data.main.feels_like,
     weather: data.weather[0].main,
     humidity: data.main.humidity,
     wind: data.wind.speed,
+    icon: data.weather[0].icon,
   };
   return information;
 };

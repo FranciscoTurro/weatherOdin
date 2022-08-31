@@ -7,17 +7,26 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="search">
-      <button class="getWeather">Get weather</button>
-      <input type="text" class="input" />
-    </div>
-    <div id="widget">
-      <div class="cityName"></div>
-      <div class="weather"></div>
-      <div class="temperature"></div>
-      <div class="feelsLike"></div>
-      <div class="humidity"></div>
-      <div class="wind"></div>
+    <div id="container">
+      <div id="widget">
+        <div class="title">
+          <h1>Title</h1>
+          <input type="text" class="search" />
+        </div>
+        <div class="mainInfo">
+          <div class="cityName"></div>
+          <div class="weatherAndIcon">
+            <div class="temperature"></div>
+            <img src="" class="icon" />
+          </div>
+        </div>
+        <div class="secondaryInfo">
+          <div class="weather"></div>
+          <div class="feelsLike"></div>
+          <div class="humidity"></div>
+          <div class="wind"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

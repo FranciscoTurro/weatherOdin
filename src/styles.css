@@ -1,2 +1,59 @@
-.temperature {
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#widget {
+  background-color: #000000d0;
+  color: white;
+  min-width: 30em;
+  min-height: 30em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  border-radius: 30px;
+  gap: 2em;
+  padding: 2em;
+}
+
+.title {
+  display: grid;
+  text-align: center;
+}
+
+.search {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 25px;
+  background: #7c7c7c2b;
+  color: white;
+  font-size: 100%;
+}
+
+.mainInfo {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.weatherAndIcon {
+  display: flex;
+  text-align: center;
+  align-items: center;
 }
