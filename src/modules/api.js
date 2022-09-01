@@ -1,4 +1,4 @@
-const hitAPI = async (city) => {
+const hitAPIWeather = async (city) => {
   try {
     console.log('Fetching weather data');
     const response = await fetch(
@@ -26,4 +26,20 @@ const loadInformation = (data) => {
   return information;
 };
 
-export { hitAPI };
+const setBackgroundPicture = async (theme) => {
+  try {
+    const response = await fetch(
+      `https://pixabay.com/api/?key=29637230-d89de1b4a0f0e9d97abfddc8f&q=${theme}&image_type=photo&min_width=1920&min_height=1080`
+    );
+    const data = await response.json();
+
+    const randomNum = Math.floor(Math.random() * 10);
+
+    const imageURL = data.hits[randomNum].largeImageURL;
+    document.body.style.backgroundImage = `url(${imageURL})`;
+  } catch (error) {
+    console.log('ERROR: ' + error);
+  }
+};
+
+export { hitAPIWeather, setBackgroundPicture };

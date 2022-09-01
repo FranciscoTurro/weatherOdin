@@ -1,4 +1,4 @@
-import { hitAPI } from './modules/api';
+import { hitAPIWeather, setBackgroundPicture } from './modules/api';
 import { drawInfoC } from './modules/front';
 import './styles.css';
 
@@ -8,7 +8,7 @@ const titleIcon = document.querySelector('.titleIcon');
 input.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     if (input.value.length != 0) {
-      const infor = hitAPI(input.value);
+      const infor = hitAPIWeather(input.value);
       drawInfoC(infor);
       input.value = '';
     }
@@ -16,7 +16,8 @@ input.addEventListener('keypress', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const infor = hitAPI('buenos aires');
+  const infor = hitAPIWeather('new york');
   drawInfoC(infor);
   titleIcon.src = '../src/img/icon.png';
+  setBackgroundPicture('city');
 });
