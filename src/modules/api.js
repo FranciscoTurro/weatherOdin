@@ -1,17 +1,3 @@
-const hitAPIWeather = async (city) => {
-  try {
-    console.log('Fetching weather data');
-    const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=c59d34581182187599601a68c72dcacd`
-    );
-    const data = await response.json();
-
-    return loadInformation(data);
-  } catch (error) {
-    console.log('ERROR: ' + error);
-  }
-};
-
 const loadInformation = (data) => {
   const information = {
     name: data.name,
@@ -26,6 +12,19 @@ const loadInformation = (data) => {
   return information;
 };
 
+const hitAPIWeather = async (city) => {
+  try {
+    const response = await fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=c59d34581182187599601a68c72dcacd`
+    );
+    const data = await response.json();
+
+    return loadInformation(data);
+  } catch (error) {
+    console.log(`ERROR: ${error}`);
+  }
+};
+
 const setBackgroundPicture = async (theme) => {
   try {
     const response = await fetch(
@@ -38,7 +37,7 @@ const setBackgroundPicture = async (theme) => {
     const imageURL = data.hits[randomNum].largeImageURL;
     document.body.style.backgroundImage = `url(${imageURL})`;
   } catch (error) {
-    console.log('ERROR: ' + error);
+    console.log(`ERROR: ${error}`);
   }
 };
 

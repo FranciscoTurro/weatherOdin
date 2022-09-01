@@ -7,7 +7,7 @@ const feelsLike = document.querySelector('.feelsLike');
 const icon = document.querySelector('.icon');
 
 const drawInfoC = (data) => {
-  //receives a promise
+  // receives a promise
   data.then((information) => {
     name.textContent = `${information.name}, ${information.country}`;
     temperature.textContent = `${Math.round(information.temperature)} °C`;
@@ -21,4 +21,4 @@ const drawInfoC = (data) => {
   });
 };
 
-export { drawInfoC };
+export default drawInfoC;
